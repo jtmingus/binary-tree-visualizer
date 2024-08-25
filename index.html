@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        max-height: 100%;
+        overflow: hidden;
+      }
+
+      body {
+        background: rgb(200, 174, 238);
+        background: radial-gradient(
+          circle,
+          rgba(200, 174, 238, 0.8) 0%,
+          rgba(148, 187, 233, 0.8) 100%
+        );
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+      }
+
+      #myCanvas {
+        cursor: grab;
+        flex: 1;
+        min-height: 0;
+        position: absolute;
+      }
+
+      textarea {
+        box-shadow: inset 0 0.0625em 0.125em rgba(10, 10, 10, 0.05);
+        border-color: #babfc3;
+        border-radius: 0.375em;
+        color: hsl(0deg, 0%, 21%);
+        display: block;
+        height: 64px;
+        max-height: 64px;
+        min-height: 64px;
+        width: 300px;
+      }
+
+      button {
+        height: 24px;
+        margin-bottom: 24px;
+
+        outline: 0;
+        text-align: center;
+        border: 1px solid #babfc3;
+        padding: 7px 16px;
+        min-height: 36px;
+        min-width: 36px;
+        width: 80px;
+        color: #202223;
+        background: #ffffff;
+        border-radius: 4px;
+        font-weight: 500;
+        font-size: 14px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px;
+      }
+      button:hover {
+        background: #f6f6f7;
+        outline: 1px solid transparent;
+      }
+
+      textarea,
+      button {
+        display: block;
+        margin-left: 16px;
+        margin-top: 16px;
+        z-index: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas">
+      Your browser does not support the HTML canvas tag.
+    </canvas>
+    <textarea id="textAreaNodes" class="front"></textarea>
+    <button onclick="updateTreeNodes()" class="front">Update</button>
+
+    <script src="tree-viz.js"></script>
+  </body>
+</html>
